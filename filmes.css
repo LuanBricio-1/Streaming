@@ -24,6 +24,8 @@ a:hover{
     margin-bottom: 2.5vh;
     max-width: 400px;
     max-height: 450px;
+    min-width: 100px;
+    min-height: 150px;
 }
 
 
@@ -98,4 +100,12 @@ p{
     font-style: normal;
   }
 
+  @media screen and (max-width: 600px) {
+    h2{
+        font-size: 5vh;
+    }
 
+    h3{
+        font-size: 2vh;
+    }
+  }
