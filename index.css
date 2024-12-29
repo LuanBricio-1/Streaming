@@ -1,7 +1,8 @@
 body{
     background-image: linear-gradient(black, blue);
     color: #fff;
-    font-family: 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans', 'Noto Sans Symbols 2', sans-serif;
+    font-family: 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans', 'Noto Sans Symbols 2', sans-serif;7
+    padding-bottom: 0;
 }
 
 h1{
@@ -29,4 +30,22 @@ ul{
 li{
     list-style-type: none;
     margin-right: 10vh;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(208, 27, 27, 0.508);
+    margin-bottom: 0%;
+}
+
+footer a{
+    color: #fff;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    text-align: center;
 }

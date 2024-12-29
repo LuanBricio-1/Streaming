@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/filmes.css">
+    <script src="/scripts/script.js"></script>
+    <link rel="stylesheet" href="/series.css">
+</head>
+<body>
+    <header>
+        <h1>Cine Luan 2</h1>
+        <a href="/index.html"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-house-up-fill" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 1 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.707l1.5-1.5a.5.5 0 0 1 .708 0Z"/>
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+              </svg>
+              <br>Home
+        </a>
+    </header>
+
+    <section>
+
+        <div class="container">
+            <h2>Turma da monica: origens </h2>
+            <div>
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sCX5DFQTtxpW3EQkXcTL68FDZHs.jpg" alt="Poster Dois homens e meio" class="poster">
+                <p>Mônica, Magali, Milena, Cebolinha, Cascão e Milena se conhecem em um hotel do Limoeiro, mas precisam superar uma competição e suas questões pessoais para dar origem à Turma da Mônica.</p>
+            </div>
+        </div>
+    
+        <div id="turmadamonicaorigens"></div>
+    
+        <form id="episodio-form">
+            <label for="temporada">Temporada:</label>
+            <input type="number" id="temporada" name="temporada" min="1" required>
+    
+            <label for="episodio">Episódio:</label>
+            <input type="number" id="episodio" name="episodio" min="1" required>
+    
+            <button type="button" onclick="salvarProgresso()">Salvar</button>
+            <button type="button" onclick="carregarProgresso()">Carregar</button>
+        </form>
+
+
+        <script>
+            var frame = document.getElementById('turmadamonicaorigens');
+            frame.innerHTML += '<iframe src="https://embed.warezcdn.link/serie/tt30496489"' +
+                ' scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="500px" width="500px"></iframe>';
+
+            function salvarProgresso() {
+                const temporada = document.getElementById('temporada').value;
+                const episodio = document.getElementById('episodio').value;
+
+                if (temporada && episodio) {
+                    localStorage.setItem('temporada', temporada);
+                    localStorage.setItem('episodio', episodio);
+                    alert('Progresso salvo com sucesso!');
+                } else {
+                    alert('Por favor, preencha os campos de temporada e episódio.');
+                }
+            }
+
+            function carregarProgresso() {
+                const temporada = localStorage.getItem('temporada');
+                const episodio = localStorage.getItem('episodio');
+
+                if (temporada && episodio) {
+                    document.getElementById('temporada').value = temporada;
+                    document.getElementById('episodio').value = episodio;
+                    alert(`Você parou na Temporada ${temporada}, Episódio ${episodio}.`);
+                } else {
+                    alert('Nenhum progresso salvo encontrado.');
+                }
+            }
+
+        </script>
+
+    </section>
+    
+
+    <footer>
+        <a href="https://www.instagram.com/luan_bricio/"> By: Luan Bricio</a>
+    </footer>
+</body>
+</html>

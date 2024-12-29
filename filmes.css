@@ -12,10 +12,10 @@ body{
 a{
     color: #fff;
     text-decoration: none;
-}
-
-a:hover{
-    font-size: 110%;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    text-align: center;
 }
 
 .poster{
