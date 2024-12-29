@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/filmes.css">
+    <script src="/scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Cine Luan 2</h1>
+        <a href="/pages/index.html">inicio</a>
+    </header>
+
+    <section>
+
+        <h2>Red: Crescer é uma fera</h2>
+        
+
+        <div>
+            <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/qSoLBerH2841Ha4W0LYkexftlpc.jpg" alt="Poster red crescer é uma fera" class="poster">
+            <p>Mei, de treze anos, está experimentando a estranheza de ser uma adolescente com uma reviravolta – quando ela fica muito animada, ela se transforma em um panda vermelho gigante.</p>
+        </div>
+
+        <div id="redcrescereumafera"></div>
+
+        <script>
+            var frame = document.getElementById('redcrescereumafera');
+            frame.innerHTML += '<iframe src="https://embed.warezcdn.link/filme/tt8097030"'+ '" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="500px"   width="500px"></iframe>';
+        </script>
+        
+    </section>
+
+    <footer>
+        <a href="https://www.instagram.com/luan_bricio/"> By: Luan Bricio</a>
+    </footer>
+</body>
+</html>

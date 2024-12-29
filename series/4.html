@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/filmes.css">
+    <script src="/scripts/script.js"></script>
+    <link rel="stylesheet" href="/series.css">
+</head>
+<body>
+    <header>
+        <h1>Cine Luan 2</h1>
+        <a href="/pages/index.html">inicio</a>
+    </header>
+
+    <section>
+        <h2>Dois Homens e meio </h2>
+        <div>
+            <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/dPCv0RaOj2pRxZcUDOoqXFe7Pqn.jpg" alt="Poster Dois homens e meio" class="poster">
+            <p>A vida mulherenga do solteirão Charlie é afetada quando seu irmão divorciado e seu sobrinho de língua afiada vão morar com ele.</p>
+        </div>
+    
+        <div id="doishomensemeio"></div>
+    
+        <form id="episodio-form">
+            <label for="temporada">Temporada:</label>
+            <input type="number" id="temporada" name="temporada" min="1" required>
+    
+            <label for="episodio">Episódio:</label>
+            <input type="number" id="episodio" name="episodio" min="1" required>
+    
+            <button type="button" onclick="salvarProgresso()">Salvar</button>
+            <button type="button" onclick="carregarProgresso()">Carregar</button>
+        </form>
+
+
+        <script>
+            var frame = document.getElementById('doishomensemeio');
+            frame.innerHTML += '<iframe src="https://embed.warezcdn.link/serie/tt0369179"' +
+                ' scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="500px" width="500px"></iframe>';
+
+            function salvarProgresso() {
+                const temporada = document.getElementById('temporada').value;
+                const episodio = document.getElementById('episodio').value;
+
+                if (temporada && episodio) {
+                    localStorage.setItem('temporada', temporada);
+                    localStorage.setItem('episodio', episodio);
+                    alert('Progresso salvo com sucesso!');
+                } else {
+                    alert('Por favor, preencha os campos de temporada e episódio.');
+                }
+            }
+
+            function carregarProgresso() {
+                const temporada = localStorage.getItem('temporada');
+                const episodio = localStorage.getItem('episodio');
+
+                if (temporada && episodio) {
+                    document.getElementById('temporada').value = temporada;
+                    document.getElementById('episodio').value = episodio;
+                    alert(`Você parou na Temporada ${temporada}, Episódio ${episodio}.`);
+                } else {
+                    alert('Nenhum progresso salvo encontrado.');
+                }
+            }
+
+        </script>
+
+    </section>
+    
+
+    <footer>
+        <a href="https://www.instagram.com/luan_bricio/"> By: Luan Bricio</a>
+    </footer>
+</body>
+</html>
